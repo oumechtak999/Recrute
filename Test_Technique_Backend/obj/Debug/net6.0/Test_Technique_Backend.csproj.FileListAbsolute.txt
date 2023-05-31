@@ -64,3 +64,12 @@ C:\Users\Fatima\source\repos\Test_Technique_Backend\Test_Technique_Backend\obj\D
 C:\Users\Fatima\source\repos\Test_Technique_Backend\Test_Technique_Backend\obj\Debug\net6.0\Test_Technique_Backend.pdb
 C:\Users\Fatima\source\repos\Test_Technique_Backend\Test_Technique_Backend\obj\Debug\net6.0\Test_Technique_Backend.genruntimeconfig.cache
 C:\Users\Fatima\source\repos\Test_Technique_Backend\Test_Technique_Backend\obj\Debug\net6.0\ref\Test_Technique_Backend.dll
+C:\Users\Fatima\source\repos\Test_Technique_Backend\Test_Technique_Backend\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\Fatima\source\repos\Test_Technique_Backend\Test_Technique_Backend\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Fatima\source\repos\Test_Technique_Backend\Test_Technique_Backend\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\Fatima\source\repos\Test_Technique_Backend\Test_Technique_Backend\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\Fatima\source\repos\Test_Technique_Backend\Test_Technique_Backend\bin\Debug\net6.0\MediatR.dll
+C:\Users\Fatima\source\repos\Test_Technique_Backend\Test_Technique_Backend\bin\Debug\net6.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Fatima\source\repos\Test_Technique_Backend\Test_Technique_Backend\bin\Debug\net6.0\Mindscape.Raygun4Net.AspNetCore.dll
+C:\Users\Fatima\source\repos\Test_Technique_Backend\Test_Technique_Backend\bin\Debug\net6.0\Mindscape.Raygun4Net.NetCore.Common.dll
+C:\Users\Fatima\source\repos\Test_Technique_Backend\Test_Technique_Backend\bin\Debug\net6.0\MediatR.Contracts.dll

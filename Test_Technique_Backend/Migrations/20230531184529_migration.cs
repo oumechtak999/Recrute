@@ -67,8 +67,7 @@ namespace Test_Technique_Backend.Migrations
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LastModified = table.Column<DateTime>(type: "datetime2", nullable: true),
                     LastModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    Other = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -92,8 +91,7 @@ namespace Test_Technique_Backend.Migrations
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LastModified = table.Column<DateTime>(type: "datetime2", nullable: true),
                     LastModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    Other = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -212,12 +210,13 @@ namespace Test_Technique_Backend.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CandidatId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Titre = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Path = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Created = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LastModified = table.Column<DateTime>(type: "datetime2", nullable: true),
                     LastModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    Other = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -242,8 +241,7 @@ namespace Test_Technique_Backend.Migrations
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LastModified = table.Column<DateTime>(type: "datetime2", nullable: true),
                     LastModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    Other = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -265,6 +263,25 @@ namespace Test_Technique_Backend.Migrations
                         principalTable: "Offres",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Offres",
+                columns: new[] { "Id", "AnnéesExpérience", "Created", "CreatedBy", "Date", "Description", "Entreprise", "IsDeleted", "LastModified", "LastModifiedBy", "SousTitre", "Titre", "TypeContrat", "Ville" },
+                values: new object[,]
+                {
+                    { new Guid("b0788d2f-8003-43c1-92a4-edc76a7c5dde"), 2, new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Description1Description1", "Entreprise 1", false, null, null, "SOUS TITRE 1", "TITRE 1", "Type 1", "Ville 1" },
+                    { new Guid("b0788d2f-8004-43c1-92a4-edc76a7c5dde"), 2, new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Description2 Description2", "Entreprise 2", false, null, null, "SOUS TITRE 2", "TITRE 2", "Type 1", "Ville 1" },
+                    { new Guid("b0788d2f-8005-43c1-92a4-edc76a7c5dde"), 2, new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified), "Description3 Description3", "Entreprise 1", false, null, null, "SOUS TITRE 3", "TITRE 3", "Type 1", "Ville 1" },
+                    { new Guid("b0788d2f-8006-43c1-92a4-edc76a7c5dde"), 2, new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), "Description4 Description4", "Entreprise 1", false, null, null, "SOUS TITRE 4", "TITRE 4", "Type 1", "Ville 1" },
+                    { new Guid("b0788d2f-8007-43c1-92a4-edc76a7c5dde"), 2, new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "Description5 Description5", "Entreprise  5", false, null, null, "SOUS TITRE 5", "TITRE 5", "Type 1", "Ville 5" },
+                    { new Guid("b0788d2f-8008-43c1-92a4-edc76a7c5dde"), 2, new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), "Description6 Description6", "Entreprise 6", false, null, null, "SOUS TITRE 6", "TITRE 6", "Type 1", "Ville 1" },
+                    { new Guid("b0788d2f-8009-43c1-92a4-edc76a7c5dde"), 2, new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), "Description7 Description7 ", "Entreprise 7", false, null, null, "SOUS TITRE 7", "TITRE 7", "Type 1", "Ville 1" },
+                    { new Guid("b0788d2f-8010-43c1-92a4-edc76a7c5dde"), 2, new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), "Description8 Description8", "Entreprise 8", false, null, null, "SOUS TITRE 8", "TITRE 8", "Type 1", "Ville 1" },
+                    { new Guid("b0788d2f-8011-43c1-92a4-edc76a7c5dde"), 2, new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "Description9 Description9", "Entreprise 9", false, null, null, "SOUS TITRE 9", "TITRE 9", "Type 1", "Ville 1" },
+                    { new Guid("b0788d2f-8012-43c1-92a4-edc76a7c5dde"), 2, new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), "Description10 Description10", "Entreprise 1", false, null, null, "SOUS TITRE 10", "TITRE 10", "Type 1", "Ville 1" },
+                    { new Guid("b0788d2f-8013-43c1-92a4-edc76a7c5dde"), 2, new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), "Description11 Description11", "Entreprise 11", false, null, null, "SOUS TITRE 11", "TITRE 11", "Type 1", "Ville 1" },
+                    { new Guid("b0788d2f-8014-43c1-92a4-edc76a7c5dde"), 2, new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Description12 Description12", "Entreprise 2", false, null, null, "SOUS TITRE 12", "TITRE 12", "Type 1", "Ville 1" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -309,7 +326,8 @@ namespace Test_Technique_Backend.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Cvs_CandidatId",
                 table: "Cvs",
-                column: "CandidatId");
+                column: "CandidatId",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_OffreCandidats_AdminId",

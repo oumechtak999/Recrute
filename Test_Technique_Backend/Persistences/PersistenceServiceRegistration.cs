@@ -2,6 +2,12 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Test_Technique_Backend.Models.Entities;
+using Test_Technique_Backend.Persistences.Repositories;
+using Test_Technique_Backend.Persistences.Repositories.AdminRepository;
+using Test_Technique_Backend.Persistences.Repositories.CandidatRepository;
+using Test_Technique_Backend.Persistences.Repositories.CvRepository;
+using Test_Technique_Backend.Persistences.Repositories.OffreCandidatRepository;
+using Test_Technique_Backend.Persistences.Repositories.OffreRepository;
 
 namespace Test_Technique_Backend.Persistences
 {
@@ -12,17 +18,15 @@ namespace Test_Technique_Backend.Persistences
             services.AddDbContext<RecruteDbContext>(options =>
                options.UseSqlServer(configuration.GetConnectionString("SqlServer"),
                b => b.MigrationsAssembly(typeof(RecruteDbContext).Assembly.FullName)));
-            //services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
+            services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
             services.AddIdentity<Admin, IdentityRole>()
           .AddEntityFrameworkStores<RecruteDbContext>().AddDefaultTokenProviders();
-            // services.AddScoped<IPersonRepository, PersonRepository>();
-            // services.AddScoped<IUserRepository, UserRepository>();
-            //services.AddScoped<IElementRepository, ElementRepository>();
-           // services.AddScoped<IServiceRepository, ServiceRepository>();
-            //services.AddScoped<IRoleRepository, RoleRepository>();
-            //services.AddScoped<IUserRoleRepository, UserRoleRepository>();
-            // services.AddScoped<IZoneRepository, ZoneRepository>();
-            //services.AddScoped<IBadgeZoneRepository, BadgeZoneRepository>();
+             services.AddScoped<IOffreRepository, OffreRepository>();
+             services.AddScoped<IAdminRepository, AdminRepository>();
+            services.AddScoped<ICandidatRepository, CandidatRepository>();
+           services.AddScoped<IOffreCandidatRepository, OffreCandidatRepository>();
+            services.AddScoped<ICvRepository, CvRepository>();
+           
 
 
 

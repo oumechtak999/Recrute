@@ -272,10 +272,6 @@ namespace Test_Technique_Backend.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Other")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Prenom")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -313,13 +309,18 @@ namespace Test_Technique_Backend.Migrations
                     b.Property<string>("LastModifiedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Other")
+                    b.Property<string>("Path")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Titre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CandidatId");
+                    b.HasIndex("CandidatId")
+                        .IsUnique();
 
                     b.ToTable("Cvs");
                 });
@@ -359,10 +360,6 @@ namespace Test_Technique_Backend.Migrations
                     b.Property<string>("LastModifiedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Other")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("SousTitre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -382,6 +379,176 @@ namespace Test_Technique_Backend.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Offres");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("b0788d2f-8003-43c1-92a4-edc76a7c5dde"),
+                            AnnéesExpérience = 2,
+                            Created = new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2023, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Description1Description1",
+                            Entreprise = "Entreprise 1",
+                            IsDeleted = false,
+                            SousTitre = "SOUS TITRE 1",
+                            Titre = "TITRE 1",
+                            TypeContrat = "Type 1",
+                            Ville = "Ville 1"
+                        },
+                        new
+                        {
+                            Id = new Guid("b0788d2f-8004-43c1-92a4-edc76a7c5dde"),
+                            AnnéesExpérience = 2,
+                            Created = new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2023, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Description2 Description2",
+                            Entreprise = "Entreprise 2",
+                            IsDeleted = false,
+                            SousTitre = "SOUS TITRE 2",
+                            Titre = "TITRE 2",
+                            TypeContrat = "Type 1",
+                            Ville = "Ville 1"
+                        },
+                        new
+                        {
+                            Id = new Guid("b0788d2f-8005-43c1-92a4-edc76a7c5dde"),
+                            AnnéesExpérience = 2,
+                            Created = new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2023, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Description3 Description3",
+                            Entreprise = "Entreprise 1",
+                            IsDeleted = false,
+                            SousTitre = "SOUS TITRE 3",
+                            Titre = "TITRE 3",
+                            TypeContrat = "Type 1",
+                            Ville = "Ville 1"
+                        },
+                        new
+                        {
+                            Id = new Guid("b0788d2f-8006-43c1-92a4-edc76a7c5dde"),
+                            AnnéesExpérience = 2,
+                            Created = new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2023, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Description4 Description4",
+                            Entreprise = "Entreprise 1",
+                            IsDeleted = false,
+                            SousTitre = "SOUS TITRE 4",
+                            Titre = "TITRE 4",
+                            TypeContrat = "Type 1",
+                            Ville = "Ville 1"
+                        },
+                        new
+                        {
+                            Id = new Guid("b0788d2f-8007-43c1-92a4-edc76a7c5dde"),
+                            AnnéesExpérience = 2,
+                            Created = new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2023, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Description5 Description5",
+                            Entreprise = "Entreprise  5",
+                            IsDeleted = false,
+                            SousTitre = "SOUS TITRE 5",
+                            Titre = "TITRE 5",
+                            TypeContrat = "Type 1",
+                            Ville = "Ville 5"
+                        },
+                        new
+                        {
+                            Id = new Guid("b0788d2f-8008-43c1-92a4-edc76a7c5dde"),
+                            AnnéesExpérience = 2,
+                            Created = new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2023, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Description6 Description6",
+                            Entreprise = "Entreprise 6",
+                            IsDeleted = false,
+                            SousTitre = "SOUS TITRE 6",
+                            Titre = "TITRE 6",
+                            TypeContrat = "Type 1",
+                            Ville = "Ville 1"
+                        },
+                        new
+                        {
+                            Id = new Guid("b0788d2f-8009-43c1-92a4-edc76a7c5dde"),
+                            AnnéesExpérience = 2,
+                            Created = new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2023, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Description7 Description7 ",
+                            Entreprise = "Entreprise 7",
+                            IsDeleted = false,
+                            SousTitre = "SOUS TITRE 7",
+                            Titre = "TITRE 7",
+                            TypeContrat = "Type 1",
+                            Ville = "Ville 1"
+                        },
+                        new
+                        {
+                            Id = new Guid("b0788d2f-8010-43c1-92a4-edc76a7c5dde"),
+                            AnnéesExpérience = 2,
+                            Created = new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2023, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Description8 Description8",
+                            Entreprise = "Entreprise 8",
+                            IsDeleted = false,
+                            SousTitre = "SOUS TITRE 8",
+                            Titre = "TITRE 8",
+                            TypeContrat = "Type 1",
+                            Ville = "Ville 1"
+                        },
+                        new
+                        {
+                            Id = new Guid("b0788d2f-8011-43c1-92a4-edc76a7c5dde"),
+                            AnnéesExpérience = 2,
+                            Created = new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2023, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Description9 Description9",
+                            Entreprise = "Entreprise 9",
+                            IsDeleted = false,
+                            SousTitre = "SOUS TITRE 9",
+                            Titre = "TITRE 9",
+                            TypeContrat = "Type 1",
+                            Ville = "Ville 1"
+                        },
+                        new
+                        {
+                            Id = new Guid("b0788d2f-8012-43c1-92a4-edc76a7c5dde"),
+                            AnnéesExpérience = 2,
+                            Created = new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2023, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Description10 Description10",
+                            Entreprise = "Entreprise 1",
+                            IsDeleted = false,
+                            SousTitre = "SOUS TITRE 10",
+                            Titre = "TITRE 10",
+                            TypeContrat = "Type 1",
+                            Ville = "Ville 1"
+                        },
+                        new
+                        {
+                            Id = new Guid("b0788d2f-8013-43c1-92a4-edc76a7c5dde"),
+                            AnnéesExpérience = 2,
+                            Created = new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2023, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Description11 Description11",
+                            Entreprise = "Entreprise 11",
+                            IsDeleted = false,
+                            SousTitre = "SOUS TITRE 11",
+                            Titre = "TITRE 11",
+                            TypeContrat = "Type 1",
+                            Ville = "Ville 1"
+                        },
+                        new
+                        {
+                            Id = new Guid("b0788d2f-8014-43c1-92a4-edc76a7c5dde"),
+                            AnnéesExpérience = 2,
+                            Created = new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2023, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Description = "Description12 Description12",
+                            Entreprise = "Entreprise 2",
+                            IsDeleted = false,
+                            SousTitre = "SOUS TITRE 12",
+                            Titre = "TITRE 12",
+                            TypeContrat = "Type 1",
+                            Ville = "Ville 1"
+                        });
                 });
 
             modelBuilder.Entity("Test_Technique_Backend.Models.Entities.OffreCandidat", b =>
@@ -413,10 +580,6 @@ namespace Test_Technique_Backend.Migrations
 
                     b.Property<Guid>("OffreId")
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Other")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -483,8 +646,8 @@ namespace Test_Technique_Backend.Migrations
             modelBuilder.Entity("Test_Technique_Backend.Models.Entities.Cv", b =>
                 {
                     b.HasOne("Test_Technique_Backend.Models.Entities.Candidat", "Candidat")
-                        .WithMany("Cvs")
-                        .HasForeignKey("CandidatId")
+                        .WithOne("Cv")
+                        .HasForeignKey("Test_Technique_Backend.Models.Entities.Cv", "CandidatId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -523,7 +686,8 @@ namespace Test_Technique_Backend.Migrations
 
             modelBuilder.Entity("Test_Technique_Backend.Models.Entities.Candidat", b =>
                 {
-                    b.Navigation("Cvs");
+                    b.Navigation("Cv")
+                        .IsRequired();
 
                     b.Navigation("OffreCandidats");
                 });

@@ -13,6 +13,6 @@ namespace Test_Technique_Backend.Models.Entities
         public int AnnéesExpérience { get; set; }
         public string DernierEmployeur { get; set; }
         public ICollection<OffreCandidat> OffreCandidats { get; set; }
-        public ICollection<Cv> Cvs { get; set; }
+        public Cv Cv { get; set; }
     }
 }

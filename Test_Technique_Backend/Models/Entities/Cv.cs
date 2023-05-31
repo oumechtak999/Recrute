@@ -6,5 +6,7 @@ namespace Test_Technique_Backend.Models.Entities
     {
         public Guid CandidatId { get; set; }
         public Candidat Candidat { get; set; }
+        public string Titre { get; set; }
+        public string Path { get; set; }
     }
 }

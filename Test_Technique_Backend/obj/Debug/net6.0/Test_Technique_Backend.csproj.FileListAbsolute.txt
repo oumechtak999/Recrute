@@ -73,3 +73,6 @@ C:\Users\Fatima\source\repos\Test_Technique_Backend\Test_Technique_Backend\bin\D
 C:\Users\Fatima\source\repos\Test_Technique_Backend\Test_Technique_Backend\bin\Debug\net6.0\Mindscape.Raygun4Net.AspNetCore.dll
 C:\Users\Fatima\source\repos\Test_Technique_Backend\Test_Technique_Backend\bin\Debug\net6.0\Mindscape.Raygun4Net.NetCore.Common.dll
 C:\Users\Fatima\source\repos\Test_Technique_Backend\Test_Technique_Backend\bin\Debug\net6.0\MediatR.Contracts.dll
+C:\Users\Fatima\source\repos\Test_Technique_Backend\Test_Technique_Backend\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Fatima\source\repos\Test_Technique_Backend\Test_Technique_Backend\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Fatima\source\repos\Test_Technique_Backend\Test_Technique_Backend\bin\Debug\net6.0\Newtonsoft.Json.dll

@@ -32,7 +32,7 @@ namespace Test_Technique_Backend.Persistences
         IsDeleted = false,
         Titre = "TITRE 1", SousTitre = "SOUS TITRE 1", Description = "Description1Description1",
         Date = new DateTime(2023, 01, 01),
-        AnnéesExpérience = 2,Entreprise = "Entreprise 1",
+        AnneesExperience = 2,Entreprise = "Entreprise 1",
         Ville = "Ville 1",
         TypeContrat = "Type 1"},
     new
@@ -44,7 +44,7 @@ namespace Test_Technique_Backend.Persistences
         SousTitre = "SOUS TITRE 2",
         Description = "Description2 Description2",
         Date = new DateTime(2023, 01, 02),
-        AnnéesExpérience = 2,
+        AnneesExperience = 2,
         Entreprise = "Entreprise 2",
         Ville = "Ville 1",
         TypeContrat = "Type 1"
@@ -58,7 +58,7 @@ namespace Test_Technique_Backend.Persistences
         SousTitre = "SOUS TITRE 3",
         Description = "Description3 Description3",
         Date = new DateTime(2023, 01, 03),
-        AnnéesExpérience = 2,
+        AnneesExperience = 2,
         Entreprise = "Entreprise 1",
         Ville = "Ville 1",
         TypeContrat = "Type 1"
@@ -72,7 +72,7 @@ namespace Test_Technique_Backend.Persistences
         SousTitre = "SOUS TITRE 4",
         Description = "Description4 Description4",
         Date = new DateTime(2023, 01, 04),
-        AnnéesExpérience = 2,
+        AnneesExperience = 2,
         Entreprise = "Entreprise 1",
         Ville = "Ville 1",
         TypeContrat = "Type 1"
@@ -86,7 +86,7 @@ namespace Test_Technique_Backend.Persistences
         SousTitre = "SOUS TITRE 5",
         Description = "Description5 Description5",
         Date = new DateTime(2023, 01, 05),
-        AnnéesExpérience = 2,
+        AnneesExperience = 2,
         Entreprise = "Entreprise  5",
         Ville = "Ville 5",
         TypeContrat = "Type 1"
@@ -100,7 +100,7 @@ namespace Test_Technique_Backend.Persistences
         SousTitre = "SOUS TITRE 6",
         Description = "Description6 Description6",
         Date = new DateTime(2023, 01, 07),
-        AnnéesExpérience = 2,
+        AnneesExperience = 2,
         Entreprise = "Entreprise 6",
         Ville = "Ville 1",
         TypeContrat = "Type 1"
@@ -114,7 +114,7 @@ namespace Test_Technique_Backend.Persistences
         SousTitre = "SOUS TITRE 7",
         Description = "Description7 Description7 ",
         Date = new DateTime(2023, 01, 08),
-        AnnéesExpérience = 2,
+        AnneesExperience = 2,
         Entreprise = "Entreprise 7",
         Ville = "Ville 1",
         TypeContrat = "Type 1"
@@ -128,7 +128,7 @@ namespace Test_Technique_Backend.Persistences
         SousTitre = "SOUS TITRE 8",
         Description = "Description8 Description8",
         Date = new DateTime(2023, 01, 09),
-        AnnéesExpérience = 2,
+        AnneesExperience = 2,
         Entreprise = "Entreprise 8",
         Ville = "Ville 1",
         TypeContrat = "Type 1"
@@ -142,7 +142,7 @@ namespace Test_Technique_Backend.Persistences
         SousTitre = "SOUS TITRE 9",
         Description = "Description9 Description9",
         Date = new DateTime(2023, 01, 10),
-        AnnéesExpérience = 2,
+        AnneesExperience = 2,
         Entreprise = "Entreprise 9",
         Ville = "Ville 1",
         TypeContrat = "Type 1"
@@ -156,7 +156,7 @@ namespace Test_Technique_Backend.Persistences
         SousTitre = "SOUS TITRE 10",
         Description = "Description10 Description10",
         Date = new DateTime(2023, 01, 11),
-        AnnéesExpérience = 2,
+        AnneesExperience = 2,
         Entreprise = "Entreprise 1",
         Ville = "Ville 1",
         TypeContrat = "Type 1"
@@ -170,7 +170,7 @@ namespace Test_Technique_Backend.Persistences
         SousTitre = "SOUS TITRE 11",
         Description = "Description11 Description11",
         Date = new DateTime(2023, 01, 12),
-        AnnéesExpérience = 2,
+        AnneesExperience = 2,
         Entreprise = "Entreprise 11",
         Ville = "Ville 1",
         TypeContrat = "Type 1"
@@ -184,7 +184,7 @@ namespace Test_Technique_Backend.Persistences
         SousTitre = "SOUS TITRE 12",
         Description = "Description12 Description12",
         Date = new DateTime(2023, 02, 02),
-        AnnéesExpérience = 2,
+        AnneesExperience = 2,
         Entreprise = "Entreprise 2",
         Ville = "Ville 1",
         TypeContrat = "Type 1"

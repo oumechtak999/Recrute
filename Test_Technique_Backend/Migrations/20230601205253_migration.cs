@@ -59,9 +59,10 @@ namespace Test_Technique_Backend.Migrations
                     Nom = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Prenom = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CIN = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Telephone = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     NiveauEtude = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    AnnéesExpérience = table.Column<int>(type: "int", nullable: false),
+                    AnneesExperience = table.Column<int>(type: "int", nullable: false),
                     DernierEmployeur = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Created = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -83,7 +84,7 @@ namespace Test_Technique_Backend.Migrations
                     SousTitre = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    AnnéesExpérience = table.Column<int>(type: "int", nullable: false),
+                    AnneesExperience = table.Column<int>(type: "int", nullable: false),
                     Entreprise = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Ville = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     TypeContrat = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -267,7 +268,7 @@ namespace Test_Technique_Backend.Migrations
 
             migrationBuilder.InsertData(
                 table: "Offres",
-                columns: new[] { "Id", "AnnéesExpérience", "Created", "CreatedBy", "Date", "Description", "Entreprise", "IsDeleted", "LastModified", "LastModifiedBy", "SousTitre", "Titre", "TypeContrat", "Ville" },
+                columns: new[] { "Id", "AnneesExperience", "Created", "CreatedBy", "Date", "Description", "Entreprise", "IsDeleted", "LastModified", "LastModifiedBy", "SousTitre", "Titre", "TypeContrat", "Ville" },
                 values: new object[,]
                 {
                     { new Guid("b0788d2f-8003-43c1-92a4-edc76a7c5dde"), 2, new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Description1Description1", "Entreprise 1", false, null, null, "SOUS TITRE 1", "TITRE 1", "Type 1", "Ville 1" },

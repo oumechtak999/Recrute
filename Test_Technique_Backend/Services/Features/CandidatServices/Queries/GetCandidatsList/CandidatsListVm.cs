@@ -1,6 +1,6 @@
-﻿namespace Test_Technique_Backend.Services.Features.OffreCandidatServices.Queries.GetOffreCandidatsList
+﻿namespace Test_Technique_Backend.Services.Features.CandidatServices.Queries.GetCandidatsList
 {
-    public class CandidatDto
+    public class CandidatsListVm
     {
         public Guid Id { get; set; }
         public string Nom { get; set; }

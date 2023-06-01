@@ -10,7 +10,7 @@ namespace Test_Technique_Backend.Models.Entities
         public string SousTitre { get; set; }
         public string Description { get; set; }
         public DateTime Date { get; set; }
-        public int AnnéesExpérience { get; set; }
+        public int AnneesExperience { get; set; }
         public string Entreprise { get; set; }
         public string Ville { get; set; }
         public string TypeContrat { get; set; }

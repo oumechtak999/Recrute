@@ -12,7 +12,7 @@ using Test_Technique_Backend.Persistences;
 namespace Test_Technique_Backend.Migrations
 {
     [DbContext(typeof(RecruteDbContext))]
-    [Migration("20230531184529_migration")]
+    [Migration("20230601205253_migration")]
     partial class migration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -240,8 +240,12 @@ namespace Test_Technique_Backend.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("AnnéesExpérience")
+                    b.Property<int>("AnneesExperience")
                         .HasColumnType("int");
+
+                    b.Property<string>("CIN")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
@@ -333,7 +337,7 @@ namespace Test_Technique_Backend.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("AnnéesExpérience")
+                    b.Property<int>("AnneesExperience")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Created")
@@ -386,7 +390,7 @@ namespace Test_Technique_Backend.Migrations
                         new
                         {
                             Id = new Guid("b0788d2f-8003-43c1-92a4-edc76a7c5dde"),
-                            AnnéesExpérience = 2,
+                            AnneesExperience = 2,
                             Created = new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Date = new DateTime(2023, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Description1Description1",
@@ -400,7 +404,7 @@ namespace Test_Technique_Backend.Migrations
                         new
                         {
                             Id = new Guid("b0788d2f-8004-43c1-92a4-edc76a7c5dde"),
-                            AnnéesExpérience = 2,
+                            AnneesExperience = 2,
                             Created = new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Date = new DateTime(2023, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Description2 Description2",
@@ -414,7 +418,7 @@ namespace Test_Technique_Backend.Migrations
                         new
                         {
                             Id = new Guid("b0788d2f-8005-43c1-92a4-edc76a7c5dde"),
-                            AnnéesExpérience = 2,
+                            AnneesExperience = 2,
                             Created = new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Date = new DateTime(2023, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Description3 Description3",
@@ -428,7 +432,7 @@ namespace Test_Technique_Backend.Migrations
                         new
                         {
                             Id = new Guid("b0788d2f-8006-43c1-92a4-edc76a7c5dde"),
-                            AnnéesExpérience = 2,
+                            AnneesExperience = 2,
                             Created = new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Date = new DateTime(2023, 1, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Description4 Description4",
@@ -442,7 +446,7 @@ namespace Test_Technique_Backend.Migrations
                         new
                         {
                             Id = new Guid("b0788d2f-8007-43c1-92a4-edc76a7c5dde"),
-                            AnnéesExpérience = 2,
+                            AnneesExperience = 2,
                             Created = new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Date = new DateTime(2023, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Description5 Description5",
@@ -456,7 +460,7 @@ namespace Test_Technique_Backend.Migrations
                         new
                         {
                             Id = new Guid("b0788d2f-8008-43c1-92a4-edc76a7c5dde"),
-                            AnnéesExpérience = 2,
+                            AnneesExperience = 2,
                             Created = new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Date = new DateTime(2023, 1, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Description6 Description6",
@@ -470,7 +474,7 @@ namespace Test_Technique_Backend.Migrations
                         new
                         {
                             Id = new Guid("b0788d2f-8009-43c1-92a4-edc76a7c5dde"),
-                            AnnéesExpérience = 2,
+                            AnneesExperience = 2,
                             Created = new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Date = new DateTime(2023, 1, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Description7 Description7 ",
@@ -484,7 +488,7 @@ namespace Test_Technique_Backend.Migrations
                         new
                         {
                             Id = new Guid("b0788d2f-8010-43c1-92a4-edc76a7c5dde"),
-                            AnnéesExpérience = 2,
+                            AnneesExperience = 2,
                             Created = new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Date = new DateTime(2023, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Description8 Description8",
@@ -498,7 +502,7 @@ namespace Test_Technique_Backend.Migrations
                         new
                         {
                             Id = new Guid("b0788d2f-8011-43c1-92a4-edc76a7c5dde"),
-                            AnnéesExpérience = 2,
+                            AnneesExperience = 2,
                             Created = new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Date = new DateTime(2023, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Description9 Description9",
@@ -512,7 +516,7 @@ namespace Test_Technique_Backend.Migrations
                         new
                         {
                             Id = new Guid("b0788d2f-8012-43c1-92a4-edc76a7c5dde"),
-                            AnnéesExpérience = 2,
+                            AnneesExperience = 2,
                             Created = new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Date = new DateTime(2023, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Description10 Description10",
@@ -526,7 +530,7 @@ namespace Test_Technique_Backend.Migrations
                         new
                         {
                             Id = new Guid("b0788d2f-8013-43c1-92a4-edc76a7c5dde"),
-                            AnnéesExpérience = 2,
+                            AnneesExperience = 2,
                             Created = new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Date = new DateTime(2023, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Description11 Description11",
@@ -540,7 +544,7 @@ namespace Test_Technique_Backend.Migrations
                         new
                         {
                             Id = new Guid("b0788d2f-8014-43c1-92a4-edc76a7c5dde"),
-                            AnnéesExpérience = 2,
+                            AnneesExperience = 2,
                             Created = new DateTime(2023, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Date = new DateTime(2023, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Description12 Description12",

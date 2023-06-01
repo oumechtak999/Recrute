@@ -1,8 +1,9 @@
-﻿namespace Test_Technique_Backend.Services.Features.OffreCandidatServices.Queries.GetOffreCandidatsList
+﻿using MediatR;
+
+namespace Test_Technique_Backend.Services.Features.CandidatServices.Commands.CreateCandidat
 {
-    public class CandidatDto
+    public class CreateCandidatCommand : IRequest<Guid>
     {
-        public Guid Id { get; set; }
         public string Nom { get; set; }
         public string Prenom { get; set; }
         public string Email { get; set; }

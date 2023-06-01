@@ -2,6 +2,8 @@
 using System.Data;
 using System.Xml.Linq;
 using Test_Technique_Backend.Models.Entities;
+using Test_Technique_Backend.Services.Features.CandidatServices.Commands.CreateCandidat;
+using Test_Technique_Backend.Services.Features.CandidatServices.Queries.GetCandidatsList;
 using Test_Technique_Backend.Services.Features.CvServices.Commands.CreateCv;
 using Test_Technique_Backend.Services.Features.CvServices.Queries.GetCvDetail;
 using Test_Technique_Backend.Services.Features.OffreCandidatServices.Commands.CreateOffreCandidat;
@@ -21,8 +23,9 @@ namespace Test_Technique_Backend.Services.Profiles
             CreateMap<OffreCandidat, CreateOffreCandidatCommand>().ReverseMap();
             CreateMap<Cv, CreateCvCommand>().ReverseMap();
             CreateMap<Cv, CvDetailVm>().ReverseMap();
+            CreateMap<Cv, CandidatsListVm>().ReverseMap();
+            CreateMap<Candidat, CreateCandidatCommand>().ReverseMap();
             
-
 
         }
     }

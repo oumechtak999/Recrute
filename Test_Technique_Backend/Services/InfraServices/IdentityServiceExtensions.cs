@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using System.Text;
 using Test_Technique_Backend.Models.Common.Authentication;
 using Test_Technique_Backend.Services.InfraServices.Authentication;
+using Test_Technique_Backend.Services.InfraServices.Mail;
 
 namespace Test_Technique_Backend.Services.InfraServices
 {
@@ -22,7 +23,7 @@ namespace Test_Technique_Backend.Services.InfraServices
             //    .AddEntityFrameworkStores<GestionVisitesDbContext>().AddDefaultTokenProviders();
 
             services.AddTransient<IAuthenticationService, AuthenticationService>();
-            //services.AddTransient<IMailingService, MailingService>();
+            services.AddTransient<IMailingService, MailingService>();
 
 
             services.AddAuthentication(options =>

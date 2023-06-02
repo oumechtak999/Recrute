@@ -10,11 +10,11 @@ namespace Test_Technique_Backend.Controllers
     [ApiController]
     public class UploadController : ControllerBase
     {
-        private readonly IWebHostEnvironment _hostingEnvironment;
+       // private readonly IWebHostEnvironment _hostingEnvironment;
         private readonly UploadSettings _uploadSettings;
-        public UploadController(IWebHostEnvironment hostingEnvironment, IOptions<UploadSettings> uploadSettings)
+        public UploadController( IOptions<UploadSettings> uploadSettings)
         {
-            _hostingEnvironment = hostingEnvironment;
+            
             _uploadSettings = uploadSettings.Value;
         }
 
@@ -34,9 +34,10 @@ namespace Test_Technique_Backend.Controllers
 
             try
             {
-                string webRootPath = _hostingEnvironment.WebRootPath;
+                //string webRootPath = _hostingEnvironment.WebRootPath;
                 // string uploadsDir = Path.Combine(webRootPath, "uploads");
                 string uploadsDir = _uploadSettings.Url;
+                //string uploadsDir = "C:/Users/Fatima/Desktop/Test_Technique_Frontend/Archivofront/src/assets/files/";
                 // wwwroot/uploads/
                 if (!Directory.Exists(uploadsDir))
                     Directory.CreateDirectory(uploadsDir);

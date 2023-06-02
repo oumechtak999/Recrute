@@ -14,7 +14,7 @@ namespace Test_Technique_Backend.Services.InfraServices.Mail
             _mailSettings = mailSettings.Value;
         }
 
-        public async Task SendEmailAsync(string mailTo, string subject, string body, string path)
+        public async Task SendEmailAsync(string mailTo, string subject, string body)
         {
 
 
@@ -25,9 +25,7 @@ namespace Test_Technique_Backend.Services.InfraServices.Mail
             mail.Subject = subject;
             mail.Body = body;
 
-            System.Net.Mail.Attachment attachment;
-            attachment = new System.Net.Mail.Attachment(path);
-            mail.Attachments.Add(attachment);
+            
 
             SmtpServer.Port = _mailSettings.Port;
             SmtpServer.Credentials = new System.Net.NetworkCredential(_mailSettings.Email, _mailSettings.Password);

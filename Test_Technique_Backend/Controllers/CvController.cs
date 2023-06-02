@@ -17,10 +17,10 @@ namespace Test_Technique_Backend.Controllers
         {
             _mediator = mediator;
         }
-        [HttpGet("{id}", Name = "GetCvById")]
+        [HttpGet("{id}", Name = "GetCvByCandidatId")]
         public async Task<ActionResult<List<CvDetailVm>>> GetCvById(Guid id)
         {
-            var getCvDetailQuery = new GetCvDetailQuery() { Id = id };
+            var getCvDetailQuery = new GetCvDetailQuery() { CandidatId = id };
             return Ok(await _mediator.Send(getCvDetailQuery));
         }
         [HttpPost(Name = "AddCv")]

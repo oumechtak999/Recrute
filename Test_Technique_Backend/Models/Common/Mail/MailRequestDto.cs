@@ -10,6 +10,6 @@ namespace Test_Technique_Backend.Models.Common.Mail
         public string Subject { get; set; }
         [Required]
         public string Body { get; set; }
-        public string Path { get; set; }
+       
     }
 }

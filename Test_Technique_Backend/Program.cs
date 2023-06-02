@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using System.Security.Principal;
+using Test_Technique_Backend.Models.Common.Mail;
+using Test_Technique_Backend.Models.Common.Upload;
 using Test_Technique_Backend.Models.Entities;
 using Test_Technique_Backend.Persistences;
 using Test_Technique_Backend.Services;
@@ -22,6 +24,8 @@ var Configuration = builder.Configuration;
 builder.Services.AddPersistenceServices(Configuration);
 builder.Services.AddApplicationServices();
 builder.Services.AddIdentityServices(Configuration);
+builder.Services.Configure<MailSettings>(Configuration.GetSection("MailSettings"));
+builder.Services.Configure<UploadSettings>(Configuration.GetSection("UploadSettings"));
 builder.Services.AddControllers();
 builder.Services.AddCors();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

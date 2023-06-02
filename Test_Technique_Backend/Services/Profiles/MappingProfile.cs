@@ -23,7 +23,7 @@ namespace Test_Technique_Backend.Services.Profiles
             CreateMap<OffreCandidat, CreateOffreCandidatCommand>().ReverseMap();
             CreateMap<Cv, CreateCvCommand>().ReverseMap();
             CreateMap<Cv, CvDetailVm>().ReverseMap();
-            CreateMap<Cv, CandidatsListVm>().ReverseMap();
+            CreateMap<Candidat, CandidatsListVm>().ReverseMap();
             CreateMap<Candidat, CreateCandidatCommand>().ReverseMap();
             
 

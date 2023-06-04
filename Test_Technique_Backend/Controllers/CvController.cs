@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Test_Technique_Backend.Services.Features.CvServices.Commands.CreateCv;
@@ -19,7 +20,7 @@ namespace Test_Technique_Backend.Controllers
         {
             _mediator = mediator;
         }
-
+        [Authorize]
         [HttpGet("{id}", Name = "GetCvByCandidatId")]
         // Cette méthode gère une requête pour récupérer les détails du CV d'un candidat.
         public async Task<ActionResult<List<CvDetailVm>>> GetCvById(Guid id)

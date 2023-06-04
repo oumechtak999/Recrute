@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Test_Technique_Backend.Services.Features.OffreCandidatServices.Commands.CreateOffreCandidat;
@@ -36,6 +37,7 @@ namespace Test_Technique_Backend.Controllers
             var id = await _mediator.Send(createOffreCandidatCommand);
             return Ok(id);
         }
+        [Authorize]
         [HttpDelete("{id}", Name = "DeleteOffreCandidat")]
         // Cette méthode gère une requête pour supprimer une relation entre une offre et un candidat.
 

@@ -15,13 +15,17 @@ namespace Test_Technique_Backend.Persistences
     {
         public static IServiceCollection AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
         {
+            // Configuration du contexte de base de données et de l'option de SQL Server
             services.AddDbContext<RecruteDbContext>(options =>
                options.UseSqlServer(configuration.GetConnectionString("SqlServer"),
                b => b.MigrationsAssembly(typeof(RecruteDbContext).Assembly.FullName)));
+            // Enregistrement du repository de base avec les interfaces génériques
             services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
+            // Configuration du service d'authentification basé sur l'identité
             services.AddIdentity<Admin, IdentityRole>()
           .AddEntityFrameworkStores<RecruteDbContext>().AddDefaultTokenProviders();
-             services.AddScoped<IOffreRepository, OffreRepository>();
+            // Enregistrement des repositories spécifiques
+            services.AddScoped<IOffreRepository, OffreRepository>();
              services.AddScoped<IAdminRepository, AdminRepository>();
             services.AddScoped<ICandidatRepository, CandidatRepository>();
            services.AddScoped<IOffreCandidatRepository, OffreCandidatRepository>();

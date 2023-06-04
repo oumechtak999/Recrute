@@ -20,7 +20,9 @@ namespace Test_Technique_Backend.Services.Features.CandidatServices.Queries.GetC
 
         public async Task<List<CandidatsListVm>> Handle(GetCandidatsListQuery request, CancellationToken cancellationToken)
         {
+            // Récupération de tous les candidats à partir du repository, triés par nom
             var allServices = (await _candidatRepository.ListAllAsync(null, cancellationToken)).OrderBy(x => x.Nom);
+            // Mapper les candidats vers une liste d'objets CandidatsListVm à l'aide de l'objet IMapper et la retourner
             return _mapper.Map<List<CandidatsListVm>>(allServices);
         }
     }

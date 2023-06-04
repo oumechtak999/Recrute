@@ -2,6 +2,7 @@
 
 namespace Test_Technique_Backend.Models.Common.Mail
 {
+    // Cette classe représente les informations nécessaires du destinataire pour envoyer un e-mail dans l'application.
     public class MailRequestDto
     {
         [Required]

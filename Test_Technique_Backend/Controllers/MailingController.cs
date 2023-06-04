@@ -17,6 +17,7 @@ namespace Test_Technique_Backend.Controllers
         }
 
         [HttpPost("send")]
+        // Cette méthode gère une requête pour envoyer un e-mail.
         public async Task<IActionResult> SendMail([FromBody] MailRequestDto dto)
         {
             await _mailingService.SendEmailAsync(dto.ToEmail, dto.Subject, dto.Body);

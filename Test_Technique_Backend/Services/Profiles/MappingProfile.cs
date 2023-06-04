@@ -12,6 +12,7 @@ using Test_Technique_Backend.Services.Features.OffreServices.Queries.GetOffresLi
 
 namespace Test_Technique_Backend.Services.Profiles
 {
+    // Cette classe définit une classe de profil AutoMapper pour mapper les entités vers les DTO et les modèles de vue.
     public class MappingProfile: Profile
     {
         public MappingProfile()

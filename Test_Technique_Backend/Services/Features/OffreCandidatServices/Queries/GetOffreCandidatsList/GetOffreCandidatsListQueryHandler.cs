@@ -19,7 +19,10 @@ namespace Test_Technique_Backend.Services.Features.OffreCandidatServices.Queries
 
         public async Task<List<OffreCandidatsListVm>> Handle(GetOffreCandidatsListQuery request, CancellationToken cancellationToken)
         {
+            // Récupération de toutes les OffreCandidat en incluant les propriétés "Offre" et "Candidat" grâce au repository
+            // Les OffreCandidat sont triées par Id
             var allServices = (await _offreCandidatRepository.ListAllAsync(new[] { "Offre", "Candidat" }, cancellationToken)).OrderBy(x => x.Id);
+            // Conversion des OffreCandidat en liste de OffreCandidatsListVm à l'aide de IMapper
             return _mapper.Map<List<OffreCandidatsListVm>>(allServices);
         }
     }

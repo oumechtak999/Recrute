@@ -24,8 +24,11 @@ namespace Test_Technique_Backend.Services.Features.OffreServices.Queries.GetOffr
 
         public async Task<List<OffresListVm>> Handle(GetOffresListQuery request, CancellationToken cancellationToken)
         {
+            // Récupération de toutes les Offre sans aucun critère de filtrage grâce au repository
+            // Les Offre sont triées par Titre
             var allServices = (await _offreRepository.ListAllAsync(null, cancellationToken)).OrderBy(x => x.Titre);
             return _mapper.Map<List<OffresListVm>>(allServices);
+            // Conversion des Offre en liste de OffresListVm à l'aide de IMapper
         }
     }
 }

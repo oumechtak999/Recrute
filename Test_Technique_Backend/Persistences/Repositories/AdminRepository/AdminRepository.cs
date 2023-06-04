@@ -5,8 +5,11 @@ using Test_Technique_Backend.Models.Entities;
 
 namespace Test_Technique_Backend.Persistences.Repositories.AdminRepository
 {
+    // Cette classe étend la classe générique BaseRepository et implémente l'interface IAdminRepository.
+
     public class AdminRepository : IAdminRepository
     {
+        // Le constructeur de la classe prend un objet RecruteDbContext en argument.
         protected readonly RecruteDbContext _dbContext;
         public AdminRepository(RecruteDbContext dbContext)
         {

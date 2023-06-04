@@ -8,6 +8,7 @@ using Test_Technique_Backend.Models.Common;
 
 namespace Test_Technique_Backend.Persistences.Repositories
 {
+    // Cette classe implémente l'interface IAsyncRepository pour interagir avec une entité dans une base de données de manière asynchrone.
     public class BaseRepository<T> : IAsyncRepository<T> where T : AuditableEntity
     {
         protected readonly RecruteDbContext _dbContext;
@@ -37,7 +38,7 @@ namespace Test_Technique_Backend.Persistences.Repositories
 
             return false;
         }
-        /****************************/
+       
         public async Task<IReadOnlyList<T>> ListAllAsync(string[]? includes = null, CancellationToken cancellationToken = default)
         {
 
@@ -51,7 +52,7 @@ namespace Test_Technique_Backend.Persistences.Repositories
 
             return await query
                 .Where(x => !x.IsDeleted)
-                /*            .Skip((page - 1) * size).Take(size)*/
+
                 .AsNoTracking()
                 .ToListAsync(cancellationToken);
 

@@ -16,12 +16,6 @@ namespace Test_Technique_Backend.Services.InfraServices
         {
             services.Configure<JwtSettings>(configuration.GetSection("JwtSettings"));
 
-            // services.AddDbContext<GloboTicketIdentityDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("GloboTicketIdentityConnectionString1"),
-            //    b => b.MigrationsAssembly(typeof(GloboTicketIdentityDbContext).Assembly.FullName)));
-
-            // services.AddIdentity<User, IdentityRole>()
-            //    .AddEntityFrameworkStores<GestionVisitesDbContext>().AddDefaultTokenProviders();
-
             services.AddTransient<IAuthenticationService, AuthenticationService>();
             services.AddTransient<IMailingService, MailingService>();
 
@@ -30,7 +24,7 @@ namespace Test_Technique_Backend.Services.InfraServices
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-                //
+                
                 options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
             })
                 .AddJwtBearer(o =>

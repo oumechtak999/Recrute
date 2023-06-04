@@ -12,7 +12,7 @@ using Test_Technique_Backend.Persistences;
 namespace Test_Technique_Backend.Migrations
 {
     [DbContext(typeof(RecruteDbContext))]
-    [Migration("20230601205253_migration")]
+    [Migration("20230604153434_migration")]
     partial class migration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

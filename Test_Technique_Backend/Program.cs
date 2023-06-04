@@ -20,31 +20,26 @@ var config = new ConfigurationBuilder()
     
     
 var Configuration = builder.Configuration;
-// Add services to the container.
-builder.Services.AddPersistenceServices(Configuration);
-builder.Services.AddApplicationServices();
-builder.Services.AddIdentityServices(Configuration);
-builder.Services.Configure<MailSettings>(Configuration.GetSection("MailSettings"));
-builder.Services.Configure<UploadSettings>(Configuration.GetSection("UploadSettings"));
-builder.Services.AddControllers();
-builder.Services.AddCors();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+// Ajout des services au conteneur de dépendances.
+builder.Services.AddPersistenceServices(Configuration); // Ajout des services de persistance
+builder.Services.AddApplicationServices(); // Ajout des services de l'application
+builder.Services.AddIdentityServices(Configuration); // Ajout des services d'identité
+builder.Services.Configure<MailSettings>(Configuration.GetSection("MailSettings")); // Configuration des paramètres de messagerie
+builder.Services.Configure<UploadSettings>(Configuration.GetSection("UploadSettings")); // Configuration des paramètres de téléchargement
+builder.Services.AddControllers(); // Ajout des services de contrôleurs
+builder.Services.AddCors(); // Ajout des services de gestion des CORS
+builder.Services.AddEndpointsApiExplorer(); // Ajout des services pour API Explorer
+builder.Services.AddSwaggerGen(); // Ajout des services pour Swagger
 
 var app = builder.Build();
 
-using (var scope = app.Services.CreateScope())
+using (var scope = app.Services.CreateScope()) // Création d'une portée de services
 {
     var services = scope.ServiceProvider;
     var loggerFactory = services.GetRequiredService<ILoggerFactory>();
 
-   
-        var userManager = services.GetRequiredService<UserManager<Admin>>();
-
-        await CreateFirstUser.SeedAsync(userManager);
-       
-    
+    var userManager = services.GetRequiredService<UserManager<Admin>>();
+    await CreateFirstUser.SeedAsync(userManager); // Création du premier utilisateur (admin) si nécessaire
 }
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

@@ -6,6 +6,8 @@ namespace Test_Technique_Backend.Persistences.Repositories.AdminRepository
 {
     public interface IAdminRepository
     {
+        //Cette interface est utilisée principalement pour ajouter des fonctions particulières au repository Admin .
+
         Task<IdentityResult> SeedAsync(UserManager<Admin> userManager, Admin user, string password);
         Task<Admin> GetByIdAsync(string id);
         Task<Admin> GetByIdAsync(Guid id, string[]? includes = null, CancellationToken cancellationToken = default);

@@ -21,11 +21,16 @@ namespace Test_Technique_Backend.Services.Features.CvServices.Commands.CreateCv
 
         public async Task<Guid> Handle(CreateCvCommand request, CancellationToken cancellationToken)
         {
+            // Création d'une instance du validateur CreateCvCommandValidator
             var validator = new CreateCvCommandValidator(_cvRepository);
+            // Validation de la commande CreateCvCommand
             var validationResult = await validator.ValidateAsync(request);
             if (validationResult.Errors.Count > 0)
+                // Lancer une exception si la validation échoue
                 throw new Exceptions.ValidationException(validationResult);
+            // Mapper la commande CreateCvCommand vers l'entité Cv à l'aide de l'objet IMapper
             var @cv = _mapper.Map<Cv>(request);
+            // Ajouter l'entité Cv au repository asynchrone
             @cv = await _cvRepository.AddAsync(@cv);
 
             return @cv.Id;

@@ -2,6 +2,8 @@
 
 namespace Test_Technique_Backend.Persistences.Repositories.CvRepository
 {
+    //Cette interface est utilisée principalement pour ajouter des fonctions particulières au repository Cv .
+
     public interface ICvRepository : IAsyncRepository<Cv>
     {
 

@@ -1,5 +1,6 @@
 ﻿namespace Test_Technique_Backend.Models.Common
 {
+    // Cette classe inclut des propriétés de suivi de l'audit pour la gestion des entités dans l'application.
     public class AuditableEntity
     {
         public Guid Id { get; set; }

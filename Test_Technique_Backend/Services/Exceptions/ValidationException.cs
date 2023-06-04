@@ -2,6 +2,7 @@
 using FluentValidation.Results;
 namespace Test_Technique_Backend.Services.Exceptions
 {
+    // Cette classe définit une exception personnalisée pour les erreurs de validation.
     public class ValidationException: ApplicationException
     {
 

@@ -21,11 +21,16 @@ namespace Test_Technique_Backend.Services.Features.CandidatServices.Commands.Cre
 
         public async Task<Guid> Handle(CreateCandidatCommand request, CancellationToken cancellationToken)
         {
+            // Création d'une instance du validateur CreateCandidatCommandValidator
             var validator = new CreateCandidatCommandValidator(_candidatRepository);
+            // Validation de la commande CreateCandidatCommand
             var validationResult = await validator.ValidateAsync(request);
             if (validationResult.Errors.Count > 0)
+                // Lancer une exception si la validation échoue
                 throw new Exceptions.ValidationException(validationResult);
+            // Mapper la commande CreateCandidatCommand vers l'entité Candidat à l'aide de l'objet IMapper
             var @candidat = _mapper.Map<Candidat>(request);
+            // Ajouter l'entité Candidat au repository asynchrone
             @candidat = await _candidatRepository.AddAsync(@candidat);
 
             return @candidat.Id;

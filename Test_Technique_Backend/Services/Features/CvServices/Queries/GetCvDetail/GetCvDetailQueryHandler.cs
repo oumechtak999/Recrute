@@ -21,9 +21,11 @@ namespace Test_Technique_Backend.Services.Features.CvServices.Queries.GetCvDetai
 
         public async Task<List<CvDetailVm>> Handle(GetCvDetailQuery request, CancellationToken cancellationToken)
         {
+            // Création d'une nouvelle liste d'entités Cv
             List<Cv> element = new List<Cv>();
+            // Récupération des entités Cv par l'ID du candidat
             var cv = await _cvRepository.GetBy(x => x.CandidatId == request.CandidatId, null, cancellationToken);
-            //var demand = await _demandRepository.GetByIdAsync(request.Id, null, cancellationToken);
+            // Mapper les entités Cv vers une liste d'objets CvDetailVm à l'aide de l'objet IMapper et la retourner
             return _mapper.Map<List<CvDetailVm>>(cv);
         }
     }

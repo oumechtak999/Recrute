@@ -22,10 +22,10 @@ namespace Test_Technique_Backend.Persistences
         public DbSet<OffreCandidat> OffreCandidats { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-          //  Guid.Parse("{B0788D2F-8003-43C1-92A4-EDC76A7C5DDE}")
             base.OnModelCreating(modelBuilder);
-
+            // Appliquer les configurations de l'assembly actuel pour le modèle de base de données
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(RecruteDbContext).Assembly);
+            // Ajouter des données à la table Offre
             modelBuilder.Entity<Offre>().HasData(
     new { Id = Guid.Parse("{B0788D2F-8003-43C1-92A4-EDC76A7C5DDE}"),
         Created = new DateTime(2023, 01, 06),
@@ -198,6 +198,8 @@ namespace Test_Technique_Backend.Persistences
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
+
+            // Mettre à jour les propriétés Created et LastModified pour les entités auditées
             foreach (var entry in ChangeTracker.Entries<AuditableEntity>())
             {
                 switch (entry.State)
